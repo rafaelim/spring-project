@@ -42,7 +42,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         Book ddd = new Book("Domain Driven Design", "1234", publisher);
         eric.getBooks().add(ddd);
         ddd.getAuthors().add(eric);
-
+        ddd.setPublisher(publisher);
         authorRepository.save(eric);
         bookRepository.save(ddd);
 
@@ -51,7 +51,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         Book noEJB = new Book("J2EE Development without EJB", "23444", publisher);
         rod.getBooks().add(noEJB);
         noEJB.getAuthors().add(rod);
-
+        noEJB.setPublisher(publisher);
         authorRepository.save(rod);
         bookRepository.save(noEJB);
     }
